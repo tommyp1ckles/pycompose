@@ -27,8 +27,6 @@ def apiDispatch(args):
     setup_console_handler(console_handler, options.get('--verbose'))
     return functools.partial(perform_command, options, handler, command_options)
 
-#apiDispatch(["up"])
-
 def up(filename=None):
     """
     Runs the equivilant of a docker-compose up command.
@@ -65,5 +63,4 @@ def build(noCache=False, pull=False, forceRm=False):
     if forceRm:
         opts.append("--force-rm")
     apiDispatch(opts)()
-
 
