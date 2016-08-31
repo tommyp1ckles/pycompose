@@ -1,3 +1,5 @@
+__name__="pycompose"
+
 from compose.cli.main import setup_logging, TopLevelCommand, parse_doc_section, \
     perform_command, setup_console_handler
 from compose.cli.utils import get_version_info
