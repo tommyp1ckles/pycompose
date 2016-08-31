@@ -10,6 +10,16 @@ import sys
 
 console_handler = logging.StreamHandler(sys.stderr)
 
+def runCommand(command, args):
+    """
+    Used for running any arbitrary docker-compose command.
+    params:
+        command: String of command to be run (i.e. 'up')
+        args: List of argument strings.
+    """
+    comopts = [command] + args
+    apiDispatch(comopts)()
+
 def apiDispatch(args):
     """
     Does the same thing as the dispatch function in compose.cli.main.py but instead
